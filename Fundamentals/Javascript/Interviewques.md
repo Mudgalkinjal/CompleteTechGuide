@@ -192,7 +192,7 @@
 
 
 
-`const user = { id: 1, details: { username: "Kinjal" } }; const { details: { username } } = user; console.log(username); // Kinjal`
+`const user = { id: 1, details: { username: "john" } }; const { details: { username } } = user; console.log(username); // john`
 
 * * *
 
