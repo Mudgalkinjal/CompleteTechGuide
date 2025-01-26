@@ -73,7 +73,21 @@
 
 ### 
 
-``# JavaScript Basics  ## 1. What is the difference between `map` and `forEach` in JavaScript?  - **`map`**: Creates a new array with the results of applying a function to each element. - **`forEach`**: Executes a function for each element but does not return a new array.  ### Example: ```javascript const numbers = [1, 2, 3];  // Using map const squared = numbers.map(num => num * num); console.log(squared); // [1, 4, 9]  // Using forEach numbers.forEach(num => console.log(num)); // Logs 1, 2, 3``
+# JavaScript Basics  
+
+## 1\. What is the difference between `map` and `forEach` in JavaScript?  - **`map`**: Creates a new array with the results of applying a function to each element. - **`forEach`**: Executes a function for each element but does not return a new array.  
+
+### Example: 
+```javascript
+const numbers = [1, 2, 3];
+
+// Using map
+const squared = numbers.map(num => num * num);
+console.log(squared); // [1, 4, 9]
+
+// Using forEach
+numbers.forEach(num => console.log(num)); // Logs 1, 2, 3
+```
 
 * * *
 
@@ -98,8 +112,40 @@
 
 
 
-`const arr = [1, 2, 3, 4];  // reduce const sum = arr.reduce((acc, num) => acc + num, 0); console.log(sum); // 10  // find const firstEven = arr.find(num => num % 2 === 0); console.log(firstEven); // 2  // findIndex const firstEvenIndex = arr.findIndex(num => num % 2 === 0); console.log(firstEvenIndex); // 1  // filter const evenNumbers = arr.filter(num => num % 2 === 0); console.log(evenNumbers); // [2, 4]  // some const hasOdd = arr.some(num => num % 2 !== 0); console.log(hasOdd); // true  // every const allPositive = arr.every(num => num > 0); console.log(allPositive); // true  // map const squared = arr.map(num => num * num); console.log(squared); // [1, 4, 9, 16]  // forEach arr.forEach(num => console.log(num)); // Logs 1, 2, 3, 4`
+```javascript
+const arr = [1, 2, 3, 4];
 
+// reduce
+const sum = arr.reduce((acc, num) => acc + num, 0);
+console.log(sum); // 10
+
+// find
+const firstEven = arr.find(num => num % 2 === 0);
+console.log(firstEven); // 2
+
+// findIndex
+const firstEvenIndex = arr.findIndex(num => num % 2 === 0);
+console.log(firstEvenIndex); // 1
+
+// filter
+const evenNumbers = arr.filter(num => num % 2 === 0);
+console.log(evenNumbers); // [2, 4]
+
+// some
+const hasOdd = arr.some(num => num % 2 !== 0);
+console.log(hasOdd); // true
+
+// every
+const allPositive = arr.every(num => num > 0);
+console.log(allPositive); // true
+
+// map
+const squared = arr.map(num => num * num);
+console.log(squared); // [1, 4, 9, 16]
+
+// forEach
+arr.forEach(num => console.log(num)); // Logs 1, 2, 3, 4
+```
 * * *
 
 ## 3\. Arrow Functions
@@ -115,7 +161,18 @@
 
 
 
-``// Traditional function function greet(name) {   return `Hello, ${name}`; }  // Arrow function const greetArrow = name => `Hello, ${name}`;  console.log(greet("John")); // Hello, John console.log(greetArrow("John")); // Hello, John``
+```javascript
+// Traditional function
+function greet(name) {
+  return `Hello, ${name}`;
+}
+
+// Arrow function
+const greetArrow = name => `Hello, ${name}`;
+
+console.log(greet("John")); // Hello, John
+console.log(greetArrow("John")); // Hello, John
+```
 
 * * *
 
@@ -131,7 +188,15 @@
 
 
 
-`// On arrays const numbers = [1, 2, 3]; console.log(numbers.includes(2)); // true  // On strings const text = "JavaScript"; console.log(text.includes("Script")); // true`
+```javascript
+// On arrays
+const numbers = [1, 2, 3];
+console.log(numbers.includes(2)); // true
+
+// On strings
+const text = "JavaScript";
+console.log(text.includes("Script")); // true
+```
 
 * * *
 
@@ -148,8 +213,15 @@
 ### 
 
 
+```javascript
+// Object
+const person = { name: "John", age: 30 };
+console.log(person.name); // John
 
-`// Object const person = { name: "John", age: 30 }; console.log(person.name); // John  // Array const colors = ["red", "green", "blue"]; console.log(colors[0]); // red`
+// Array
+const colors = ["red", "green", "blue"];
+console.log(colors[0]); // red
+```
 
 * * *
 
@@ -171,12 +243,42 @@
 
 
 
-`const text = "Hello World";  // slice console.log(text.slice(0, 5)); // Hello  // split console.log(text.split(" ")); // ["Hello", "World"]  // replace console.log(text.replace("World", "JavaScript")); // Hello JavaScript  // toUpperCase console.log(text.toUpperCase()); // HELLO WORLD  // toLowerCase console.log(text.toLowerCase()); // hello world`
+```javascript
+const text = "Hello World";
 
+// slice
+console.log(text.slice(0, 5)); // Hello
 
-### 
+// split
+console.log(text.split(" ")); // ["Hello", "World"]
 
-`# Advanced JavaScript Concepts  ## 1. What is the concept of Destructuring Assignment?  - **Destructuring assignment** allows you to extract values from arrays or objects into individual variables.  ### Examples:  #### Array Destructuring: ```javascript const arr = [10, 20, 30]; const [first, second] = arr; console.log(first); // 10 console.log(second); // 20`
+// replace
+console.log(text.replace("World", "JavaScript")); // Hello JavaScript
+
+// toUpperCase
+console.log(text.toUpperCase()); // HELLO WORLD
+
+// toLowerCase
+console.log(text.toLowerCase()); // hello world
+```
+
+###
+
+# Advanced JavaScript Concepts  
+
+## 1. What is the concept of Destructuring Assignment?  
+
+- **Destructuring assignment** allows you to extract values from arrays or objects into individual variables.  
+
+### Examples:  
+
+#### Array Destructuring:  
+```javascript
+const arr = [10, 20, 30];
+const [first, second] = arr;
+console.log(first); // 10
+console.log(second); // 20
+```
 
 #### Object Destructuring:
 
@@ -184,7 +286,13 @@
 
 
 
-`const person = { name: "John", age: 30 }; const { name, age } = person; console.log(name); // John console.log(age); // 30`
+```javascript
+const person = { name: "John", age: 30 };
+
+const { name, age } = person;
+console.log(name); // John
+console.log(age); // 30
+```
 
 #### Nested Destructuring:
 
@@ -192,7 +300,12 @@
 
 
 
-`const user = { id: 1, details: { username: "john" } }; const { details: { username } } = user; console.log(username); // john`
+```javascript
+const user = { id: 1, details: { username: "john" } };
+
+const { details: { username } } = user;
+console.log(username); // john
+```
 
 * * *
 
@@ -209,7 +322,28 @@
 
 
 
-`class AbstractClass {   constructor() {     if (new.target === AbstractClass) {       throw new Error("Cannot instantiate an abstract class.");     }   }    abstractMethod() {     throw new Error("Abstract method must be implemented in derived class.");   } }  class ConcreteClass extends AbstractClass {   abstractMethod() {     return "Implemented!";   } }  const instance = new ConcreteClass(); console.log(instance.abstractMethod()); // Implemented!`
+```javascript
+class AbstractClass {
+  constructor() {
+    if (new.target === AbstractClass) {
+      throw new Error("Cannot instantiate an abstract class.");
+    }
+  }
+
+  abstractMethod() {
+    throw new Error("Abstract method must be implemented in derived class.");
+  }
+}
+
+class ConcreteClass extends AbstractClass {
+  abstractMethod() {
+    return "Implemented!";
+  }
+}
+
+const instance = new ConcreteClass();
+console.log(instance.abstractMethod()); // Implemented!
+```
 
 * * *
 
@@ -225,7 +359,24 @@
 
 
 
-`const memoize = (fn) => {   const cache = {};   return (arg) => {     if (cache[arg]) {       return cache[arg]; // Return cached result     }     const result = fn(arg);     cache[arg] = result; // Store result in cache     return result;   }; };  const factorial = memoize((n) => (n <= 1 ? 1 : n * factorial(n - 1))); console.log(factorial(5)); // 120 console.log(factorial(5)); // Cached result: 120`
+```javascript
+const memoize = (fn) => {
+  const cache = {};
+  return (arg) => {
+    if (cache[arg]) {
+      return cache[arg]; // Return cached result
+    }
+    const result = fn(arg);
+    cache[arg] = result; // Store result in cache
+    return result;
+  };
+};
+
+const factorial = memoize((n) => (n <= 1 ? 1 : n * factorial(n - 1)));
+
+console.log(factorial(5)); // 120
+console.log(factorial(5)); // Cached result: 120
+```
 
 * * *
 
@@ -245,7 +396,11 @@
 
 
 
-`// Legacy code that depends on implicit globals someVariable = 10; // No error in non-strict mode console.log(someVariable); // 10`
+```javascript
+// Legacy code that depends on implicit globals
+someVariable = 10; // No error in non-strict mode
+console.log(someVariable); // 10
+```
 
 ### Example With "use strict":
 
@@ -253,12 +408,37 @@
 
 
 
-``"use strict";  // Will throw an error because `someVariable` is not declared someVariable = 10; // ReferenceError: someVariable is not defined``
+```javascript
+"use strict";
+
+// Will throw an error because `someVariable` is not declared
+someVariable = 10; // ReferenceError: someVariable is not defined
+```
 
 
 ### 
 
-``# Asynchronous JavaScript  ## 1. Event Loops  - **Definition**: The event loop is the mechanism that handles the execution of asynchronous code in JavaScript. - **How it works**:   1. Executes synchronous code in the call stack.   2. Moves asynchronous tasks (e.g., `setTimeout`, Promises) to the task queue.   3. When the call stack is empty, tasks from the queue are moved to the stack.  ### Example: ```javascript console.log("Start");  setTimeout(() => console.log("Timeout"), 0);  Promise.resolve().then(() => console.log("Promise"));  console.log("End"); // Output: Start → End → Promise → Timeout``
+# Asynchronous JavaScript
+
+## 1. Event Loops
+
+- **Definition**: The event loop is the mechanism that handles the execution of asynchronous code in JavaScript.
+- **How it works**:  
+  1. Executes synchronous code in the call stack.  
+  2. Moves asynchronous tasks (e.g., `setTimeout`, Promises) to the task queue.  
+  3. When the call stack is empty, tasks from the queue are moved to the stack.  
+
+### Example:
+```javascript
+console.log("Start");
+
+setTimeout(() => console.log("Timeout"), 0);
+
+Promise.resolve().then(() => console.log("Promise"));
+
+console.log("End");
+// Output: Start → End → Promise → Timeout
+```
 
 * * *
 
@@ -289,9 +469,16 @@
 
 ### 
 
+```javascript
+const fetchData = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Data fetched!"), 1000);
+});
+
+fetchData.then(console.log).catch(console.error);
+// Output after 1 second: Data fetched!
+```
 
 
-`const fetchData = new Promise((resolve, reject) => {   setTimeout(() => resolve("Data fetched!"), 1000); });  fetchData.then(console.log).catch(console.error); // Output after 1 second: Data fetched!`
 
 * * *
 
@@ -313,15 +500,32 @@
 
 
 
-`function fetchDataCallback(callback) {   setTimeout(() => callback(null, "Data"), 1000); }  fetchDataCallback((err, data) => {   if (err) console.error(err);   else console.log(data); });`
+```javascript
+function fetchDataCallback(callback) {
+  setTimeout(() => callback(null, "Data"), 1000);
+}
+
+fetchDataCallback((err, data) => {
+  if (err) console.error(err);
+  else console.log(data);
+});
+```
 
 #### Promise Example:
 
 ### 
 
 
+```javascript
+function fetchDataPromise() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Data"), 1000);
+  });
+}
 
-`function fetchDataPromise() {   return new Promise((resolve, reject) => {     setTimeout(() => resolve("Data"), 1000);   }); }  fetchDataPromise().then(console.log).catch(console.error);`
+fetchDataPromise().then(console.log).catch(console.error);
+```
+
 
 * * *
 
@@ -335,9 +539,22 @@
 
 ### 
 
+```javascript
+const fs = require('fs');
+
+const readFile = (filePath) => new Promise((resolve, reject) => {
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) reject(err);
+    else resolve(data);
+  });
+});
+
+readFile('example.txt')
+  .then(console.log)
+  .catch(console.error);
+```
 
 
-`const fs = require('fs');  const readFile = (filePath) => new Promise((resolve, reject) => {   fs.readFile(filePath, 'utf8', (err, data) => {     if (err) reject(err);     else resolve(data);   }); });  readFile('example.txt')   .then(console.log)   .catch(console.error);`
 
 * * *
 
@@ -352,9 +569,12 @@
 
 ### 
 
-
-
-`fetch('https://jsonplaceholder.typicode.com/posts/1')   .then(response => response.json())   .then(data => console.log(data))   .catch(error => console.error('Error:', error));`
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+  ```
 
 * * *
 
@@ -368,9 +588,19 @@
 
 ### 
 
+```javascript
+async function fetchData() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
 
-
-`async function fetchData() {   try {     const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');     const data = await response.json();     console.log(data);   } catch (error) {     console.error('Error:', error);   } }  fetchData();`
+fetchData();
+```
 
 * * *
 
@@ -384,9 +614,14 @@
 
 ### 
 
+```javascript
+function fetchData(callback) {
+  setTimeout(() => callback("Data fetched!"), 1000);
+}
 
-
-`function fetchData(callback) {   setTimeout(() => callback("Data fetched!"), 1000); }  fetchData((data) => console.log(data)); // Output after 1 second: Data fetched!`
+fetchData((data) => console.log(data));
+// Output after 1 second: Data fetched!
+```
 
 * * *
 
@@ -416,14 +651,34 @@
 
 ### 
 
+```javascript
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true);
 
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    console.log(JSON.parse(xhr.responseText));
+  } else {
+    console.error('Request failed');
+  }
+};
 
-`const xhr = new XMLHttpRequest(); xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true);  xhr.onload = function () {   if (xhr.status === 200) {     console.log(JSON.parse(xhr.responseText));   } else {     console.error('Request failed');   } };  xhr.send();`
+xhr.send();
+```
 
-### 
+# Timers and Scheduling
 
-``# Timers and Scheduling  ## 1. `setTimeout`  - **Definition**: Executes a function after a specified delay. - Returns a unique ID (timeout ID) that can be used to cancel it.  ### Example: ```javascript const timeoutId = setTimeout(() => {   console.log("Executed after 2 seconds"); }, 2000);``
+## 1. `setTimeout`
 
+- **Definition**: Executes a function after a specified delay.
+- **Returns**: A unique ID (timeout ID) that can be used to cancel it.
+
+### Example:
+```javascript
+const timeoutId = setTimeout(() => {
+  console.log("Executed after 2 seconds");
+}, 2000);
+```
 * * *
 
 ## 2\. `setInterval`
@@ -437,9 +692,12 @@
 
 ### 
 
+```javascript
+const intervalId = setInterval(() => {
+  console.log("Executed every 1 second");
+}, 1000);
+```
 
-
-`const intervalId = setInterval(() => {   console.log("Executed every 1 second"); }, 1000);`
 
 * * *
 
@@ -453,9 +711,13 @@
 
 ### 
 
+```javascript
+const timeoutId = setTimeout(() => {
+  console.log("This will not execute");
+}, 2000);
 
-
-`const timeoutId = setTimeout(() => {   console.log("This will not execute"); }, 2000);  clearTimeout(timeoutId); // Cancels the timeout`
+clearTimeout(timeoutId); // Cancels the timeout
+```
 
 * * *
 
@@ -469,9 +731,17 @@
 
 ### 
 
+```javascript
+const intervalId = setInterval(() => 
+{   console.log("This will stop after 3 seconds"); 
 
+}, 1000); 
 
-`const intervalId = setInterval(() => {   console.log("This will stop after 3 seconds"); }, 1000);  setTimeout(() => {   clearInterval(intervalId); // Stops the interval after 3 seconds }, 3000);`
+setTimeout(() => 
+{   clearInterval(intervalId);
+}
+ // Stops the interval after 3 seconds }, 3000);`
+ ```
 
 * * *
 
@@ -488,8 +758,21 @@
 ### 
 
 
+```javascript
+// setTimeout example 
+setTimeout(() => {   
+    console.log("Executed once after 2 seconds"); 
+}, 2000);  
+// setInterval example 
 
-`// setTimeout example setTimeout(() => {   console.log("Executed once after 2 seconds"); }, 2000);  // setInterval example const intervalId = setInterval(() => {   console.log("Repeating every 1 second"); }, 1000);  setTimeout(() => {   clearInterval(intervalId); // Stops the interval after 5 seconds }, 5000);`
+const intervalId = setInterval(() => {   
+    console.log("Repeating every 1 second"); 
+}, 1000);  
+
+setTimeout(() => {   
+    clearInterval(intervalId);
+} // Stops the interval after 5 seconds }, 5000);`
+```
 
 * * *
 
@@ -505,17 +788,22 @@
 
 ### 
 
+```javascript
 
+const button = document.querySelector("button");  
+button.addEventListener("click", () => {   
+    console.log("Button clicked!"); 
+});
+```
 
-`const button = document.querySelector("button");  button.addEventListener("click", () => {   console.log("Button clicked!"); });`
+*   **Remove Event Listener**
+    
+    ```javascript
 
-*   **Remove Event Listener**:
-    
-    javascript
-    
-    CopyEdit
-    
-    `const handleClick = () => console.log("Clicked!");  button.addEventListener("click", handleClick); button.removeEventListener("click", handleClick); // Removes the event listener`
+    const handleClick = () => console.log("Clicked!");  
+    button.addEventListener("click", handleClick); 
+    button.removeEventListener("click", handleClick); // Removes the event listener
+    ```
     
 
 * * *
@@ -546,20 +834,59 @@
 ### 
 
 
+```javascript
 
-`const parent = document.querySelector("#parent"); const child = document.querySelector("#child");  // Parent event listener parent.addEventListener("click", () => {   console.log("Parent clicked (bubbling)"); });  // Child event listener child.addEventListener("click", (e) => {   console.log("Child clicked");   e.stopPropagation(); // Stops event propagation });  // Prevent default action child.addEventListener("click", (e) => {   e.preventDefault(); // Prevents default action (e.g., link navigation) });`
+const parent = document.querySelector("#parent"); 
+const child = document.querySelector("#child");  
+// Parent event listener 
+parent.addEventListener("click", () => {   
+    console.log("Parent clicked (bubbling)"); 
+});  
+
+// Child event listener 
+child.addEventListener("click", (e) => {   
+    console.log("Child clicked");   
+    e.stopPropagation(); 
+    // Stops event propagation 
+});  // Prevent default action 
+
+child.addEventListener("click", (e) => {   
+    e.preventDefault(); 
+    // Prevents default action (e.g., link navigation) 
+});
+```
 
 ### Example HTML:
 
 ### 
 
+```javascript
 
-
-`<div id="parent" style="padding: 20px; background-color: lightblue;">   Parent   <button id="child">Child Button</button> </div>`
+<div id="parent" style="padding: 20px; background-color: lightblue;">   Parent   <button id="child">Child Button</button> </div>
+```
 
 ### 
 
-``# DOM Manipulation  ## 1. Manipulate the DOM Tree  - **Definition**: The DOM (Document Object Model) is a tree structure representing the HTML document. JavaScript allows us to manipulate this structure dynamically.  ### Common Methods: | Method                    | Description                           | |---------------------------|---------------------------------------| | `querySelector`           | Selects the first matching element.  | | `querySelectorAll`        | Selects all matching elements.       | | `createElement`           | Creates a new element.               | | `appendChild`             | Appends an element as a child.       | | `removeChild`             | Removes a child element.             | | `textContent` / `innerHTML` | Modifies the content of an element. |  ### Example: ```javascript // Select an element const div = document.querySelector("div");  // Add a new paragraph const paragraph = document.createElement("p"); paragraph.textContent = "This is a new paragraph."; div.appendChild(paragraph);  // Remove the paragraph div.removeChild(paragraph);``
+
+# DOM Manipulation  
+
+## 1. Manipulate the DOM Tree  - **Definition**: The DOM (Document Object Model) is a tree structure representing the HTML document. JavaScript allows us to manipulate this structure dynamically.  
+
+### Common Methods: | Method                    | Description                           | |---------------------------|---------------------------------------| | `querySelector`           | Selects the first matching element.  | | `querySelectorAll`        | Selects all matching elements.       | | `createElement`           | Creates a new element.               | | `appendChild`             | Appends an element as a child.       | | `removeChild`             | Removes a child element.             | | `textContent` / `innerHTML` | Modifies the content of an element. |  
+
+### Example: 
+
+
+```javascript 
+
+// Select an element 
+const div = document.querySelector("div");  
+// Add a new paragraph 
+const paragraph = document.createElement("p"); 
+paragraph.textContent = "This is a new paragraph."; 
+div.appendChild(paragraph);  
+// Remove the paragraph div.removeChild(paragraph);
+```
 
 * * *
 
@@ -579,9 +906,19 @@
 
 ### 
 
+```javascript
 
-
-`// Using a Map const map = new Map(); map.set("key1", "value1"); map.set({ id: 1 }, "value2"); console.log(map.get("key1")); // value1  // Using an Object const obj = { key1: "value1" }; console.log(obj.key1); // value1`
+// Using a Map 
+const map = new Map(); 
+map.set("key1", "value1"); 
+map.set({ id: 1 }, "value2"); 
+console.log(map.get("key1")); 
+// value1  
+// Using an Object 
+const obj = { key1: "value1" }; 
+console.log(obj.key1); 
+// value1`
+```
 
 * * *
 
@@ -599,9 +936,18 @@
 
 ### 
 
+```javascript
 
+// Using a Set 
+const set = new Set([1, 2, 2, 3]); 
+console.log(set); 
+// {1, 2, 3}  
+// Using an Array 
+const arr = [1, 2, 2, 3]; 
+console.log(arr); 
+// [1, 2, 2, 3]
+```
 
-`// Using a Set const set = new Set([1, 2, 2, 3]); console.log(set); // {1, 2, 3}  // Using an Array const arr = [1, 2, 2, 3]; console.log(arr); // [1, 2, 2, 3]`
 
 * * *
 
@@ -613,9 +959,22 @@
 
 ### 
 
+```javascript
 
-
-`class Calculator {   add(a, b) {     return a + b;   }    subtract(a, b) {     return a - b;   } }  const calc = new Calculator(); console.log(calc.add(5, 3)); // 8 console.log(calc.subtract(5, 3)); // 2`
+class Calculator {   
+    add(a, b) {     
+        return a + b;   
+    }    
+    
+    subtract(a, b) {     
+        return a - b;   
+    } 
+}  
+const calc = new Calculator(); 
+console.log(calc.add(5, 3)); 
+// 8 console.log(calc.subtract(5, 3)); 
+// 2
+```
 
 * * *
 
@@ -625,9 +984,45 @@
 
 ### 
 
+```javascript
+class Subject {
+  constructor() {
+    this.observers = [];
+  }
 
+  subscribe(observer) {
+    this.observers.push(observer);
+  }
 
-`class Subject {   constructor() {     this.observers = [];   }    subscribe(observer) {     this.observers.push(observer);   }    unsubscribe(observer) {     this.observers = this.observers.filter(obs => obs !== observer);   }    notify(data) {     this.observers.forEach(observer => observer.update(data));   } }  class Observer {   update(data) {     console.log("Data received:", data);   } }  // Usage const subject = new Subject(); const observer1 = new Observer(); const observer2 = new Observer();  subject.subscribe(observer1); subject.subscribe(observer2); subject.notify("Hello Observers!");  // Unsubscribe an observer subject.unsubscribe(observer1); subject.notify("Only observer2 will receive this.");`
+  unsubscribe(observer) {
+    this.observers = this.observers.filter(obs => obs !== observer);
+  }
+
+  notify(data) {
+    this.observers.forEach(observer => observer.update(data));
+  }
+}
+
+class Observer {
+  update(data) {
+    console.log("Data received:", data);
+  }
+}
+
+// Usage
+const subject = new Subject();
+const observer1 = new Observer();
+const observer2 = new Observer();
+
+subject.subscribe(observer1);
+subject.subscribe(observer2);
+
+subject.notify("Hello Observers!");
+
+// Unsubscribe an observer
+subject.unsubscribe(observer1);
+subject.notify("Only observer2 will receive this.");
+```
 
 ### Edge Cases:
 
@@ -658,9 +1053,13 @@
 
 ### 
 
+```javascript
 
-
-`// Pure function const add = (a, b) => a + b; console.log(add(2, 3)); // 5`
+// Pure function 
+const add = (a, b) => a + b; 
+console.log(add(2, 3)); 
+// 5
+```
 
 * * *
 
@@ -731,9 +1130,12 @@
 
 ### 
 
+```javascript
 
+const sanitizedInput = DOMPurify.sanitize(userInput); 
+document.body.innerHTML = sanitizedInput;
 
-`const sanitizedInput = DOMPurify.sanitize(userInput); document.body.innerHTML = sanitizedInput;`
+```
 
 * * *
 
@@ -749,9 +1151,19 @@
 
 ### 
 
+```javascript
 
+// worker.js 
+onmessage = (e) => {   
+    postMessage(e.data * 2); 
+};  
 
-`// worker.js onmessage = (e) => {   postMessage(e.data * 2); };  // main.js const worker = new Worker("worker.js"); worker.postMessage(5); worker.onmessage = (e) => console.log(e.data); // Output: 10`
+// main.js 
+const worker = new Worker("worker.js"); 
+worker.postMessage(5); 
+worker.onmessage = (e) => console.log(e.data); 
+// Output: 10
+```
 
 * * *
 
@@ -767,9 +1179,20 @@
 
 ### 
 
+```javascript
 
-
-`const box = document.querySelector(".box"); let position = 0;  function animate() {   if (position < 100) {     position++;     box.style.left = position + "px";     requestAnimationFrame(animate);   } }  animate();`
+const box = document.querySelector(".box"); 
+let position = 0;  
+function animate() {   
+    if (position < 100) 
+    {     
+        position++;     
+        box.style.left = position + "px";     
+        requestAnimationFrame(animate);   
+    } 
+}  
+animate();
+```
 
 * * *
 
@@ -779,9 +1202,16 @@
 
 ### 
 
+```javascript
 
+const EventEmitter = require("events"); 
+const emitter = new EventEmitter();  
+emitter.on("event", () => {   
+    console.log("Event triggered"); 
+});  
 
-`const EventEmitter = require("events"); const emitter = new EventEmitter();  emitter.on("event", () => {   console.log("Event triggered"); });  emitter.emit("event");`
+emitter.emit("event");
+```
 
 * * *
 
@@ -798,4 +1228,8 @@
 
 ### 
 
-`<div class="box"></div> <div id="uniqueBox"></div>`
+```javascript
+
+<div class="box"></div> 
+<div id="uniqueBox"></div>
+```
