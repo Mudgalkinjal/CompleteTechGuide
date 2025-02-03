@@ -116,3 +116,148 @@ Control flow (loops, conditionals).
 Basic error handling with try/except.
 String manipulation and type conversions.
 """
+def print_contact(name, details):
+    phone = details['phone']
+    email = details.get('email') or 'N/A'
+    city = details.get('city') or 'N/A'
+    print(f"{name}: Phone={phone}, Email={email}, City={city}")
+
+def add_contact(contacts, phone_numbers):
+    print('\n---ADD CONTACT---')
+    name = input("Name: ").strip()
+    while not name:
+        print("Name cannot be empty")
+        name = input("Name: ",strip())
+    if name in contacts:
+        print("Contact already exists")
+        return
+    phone = input("Phone: ").strip()
+    while not phone:
+        print("Phone cannot be empty")
+        phone = input("Phone: ", strip())
+    if phone in phone_numbers:
+        print("Phone already exists")
+        return
+    email = input("Email (optional): ").strip() or None
+    city = input("City (optional): ").strip() or None
+    contacts[name]={
+        'phone':phone,
+        'email':email,
+        'city':city
+    }
+    phone_numbers.add(phone)
+    print(f"Contact for `{name}` added.")
+    
+
+def view_contacts(contacts):
+    print("\n---VIEW CONTACTS---")
+    if not contacts:
+        print("No contacts found")
+        return
+    for name in contacts:
+        print_contact(name, contacts[name])
+
+def search_contact(contacts):
+    print("\n---SEARCH CONTACT---")
+    search_term = input("Enter name to search: ").strip().lower()
+    found = False
+    for name in contacts:
+        if search_term in name.lower():
+            print_contact(name, contacts[name])
+            found = True
+    if not found:
+        print("No contacts found")
+
+def update_contact(contacts, phone_numbers):
+    print("\n---UPDATE CONTACT---")
+    name = input("Enter contact name to update: ").strip()
+    if name not in contacts:
+        print('Contact not found')
+        return
+    current_details = contacts[name]
+    current_phone = current_details['phone']
+    print("Current details:")
+    print_contact(name, current_details)
+    field = input("Enter field to update (phone/email/city): ").strip().lower()
+    valid_fields = ['phone', 'email', 'city']
+    if field not in valid_fields:
+        print('Invalid field')
+        return
+    if field == 'phone':
+        new_phone = input("Enter new phone: ").strip()
+        while not new_phone:
+            print("Phone cannot be empty")
+            new_phone = input("Enter new phone: ").strip()
+        if new_phone == current_phone:
+            print("Phone number is the same. No change.")
+            return
+        if new_phone in phone_numbers:
+            print("Phone number already in use")
+            return
+        phone_numbers.remove(current_phone)
+        phone.numbers.add(new_phone)
+        current_details['phone']=new_phone
+        print('Phone number updated')
+    else:
+        new_value = input(f"Enter new {field}: ").strip()
+        current_details[field] = new_value if new_value else None
+        print(f"{field.capitalize()} updated.")
+
+def remove_contact(contacts, phone_numbers):
+    print("\n---REMOVE CONTACT---")
+    name = input("Enter contact name to remove ").strip()
+    if name in contacts:
+        phone = contacts[name]['phone']
+        del contacts[name]
+        phone_numbers.remove(phone)
+        print("Contact removed")
+    else:
+        print('Contact not found')
+
+def export_contacts(contacts):
+    print("\n---EXPORT CONTACTS---")
+    with open("contacts.txt", "w") as f:
+        f.write("Name, Phone, Email, City\n")
+        for name, details in contacts.items():
+            phone = details['phone']
+            email = details.get('email') or ''
+            city = details.get('city') or ''
+            line = f"{name}, {phone}, {email}, {city}\n"
+            f.write(line)
+    print("Contacts exported to contacts.txt.")
+
+# MAIN FUNCTION 
+
+def main():
+    contacts = {}
+    phone_numbers = set()
+    while True:
+        print("\n===== CONTACT MANAGER =====")
+        print("1. Add Contact")
+        print("2. View All Contacts")
+        print("3. Search Contact")
+        print("4. Update Contact")
+        print("5. Remove Contact")
+        print("6. Export to File")
+        print("7. Exit")
+        choice = input("Enter your choice: ").strip()
+        if choice == '1':
+            add_contact(contacts, phone_numbers)
+        elif choice=='2':
+            view_contacts(contacts)
+        elif choice=='3':
+            search_contact(contacts)
+        elif choice=='4':
+            update_contact(contacts, phone_numbers)
+        elif choice=='5':
+            remove_contact(contacts, phone_numbers)
+        elif choice=='6':
+            export_contacts(contacts)
+        elif choice=='7':
+            print('Exiting...')
+            break
+        else:
+            print('Invalid choice. Please enter a number from 1 to 7')
+
+if __name__=="__main__":
+    main()
