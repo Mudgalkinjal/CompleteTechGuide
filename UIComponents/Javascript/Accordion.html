@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion Component</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .accordion {
+        width: 100%;
+        max-width: 600px;
+      }
+      .accordion-item {
+        border-bottom: 1px solid #ccc;
+      }
+      .accordion-header {
+        background: #f1f1f1;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        border: none;
+        width: 100%;
+        text-align: left;
+      }
+      .accordion-content {
+        display: none;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+      }
+      .accordion-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">Section 1</button>
+        <div class="accordion-content">Content for section 1</div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Section 2</button>
+        <div class="accordion-content">Content for section 2</div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Section 3</button>
+        <div class="accordion-content">Content for section 3</div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll('.accordion-header').forEach((header) => {
+        header.addEventListener('click', function () {
+          this.nextElementSibling.classList.toggle('active')
+        })
+      })
+    </script>
+  </body>
+</html>
