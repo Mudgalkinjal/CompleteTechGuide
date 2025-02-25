@@ -22,4 +22,4 @@ var removeElement = function(nums, val) {
     
     // 'i' now represents the new length of the array with all non-'val' elements at the beginning.
     return i;
-};
+}; 
