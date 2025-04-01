@@ -7,7 +7,7 @@
 - **Dynamic**: Size automatically adjusts as elements are added/removed.
 
 ---
-
+2
 ## **2. Initialization & Syntax**
 ### **Create Arrays**
 ```javascript
