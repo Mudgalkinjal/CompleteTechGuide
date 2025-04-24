@@ -32,3 +32,21 @@ function flattenArr2(arr) {
 }
 const ans2 = flattenArr2(inpArr2)
 console.log(ans)
+
+//Flatten a deeply nested array with recursion and has a depth
+
+let inpArr3 = [1, [2, [3]], [4, [5]]]
+let depth = 2
+
+function flattenArr3(arr, dep) {
+  if(!Array.isArray(arr)) return [arr];
+  if(dep<1) return arr
+
+  return arr.reduce((acc,elem)=>{
+    return acc.concat(Array.isArray(elem)?flattenArr(elem,dep-1):elem)
+  },[])
+
+}
+const ans3 = flattenArr3(inpArr3, depth)
+
+console.log(ans3)
