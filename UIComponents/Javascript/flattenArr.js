@@ -1,52 +1,61 @@
-//Flatten a deeply nested array
+/*
+Write a function flattenDeep(arr) that takes an array containing values or arbitrarily nested arrays of values, and returns a new one-dimensional array with all values in order. For example:
 
-let inpArr = [1,[2,3,4],[5,6,[7,8]]];
+const input = [1, [2, [3, [4]], 5], 6];
+console.log(flattenDeep(input)); 
+// → [1, 2, 3, 4, 5, 6]
+Requirements:
 
-function flattenArr(arr) {
-  if(!Array.isArray(arr)) return [arr];
+Handle nesting to any depth.
 
-  return arr.reduce((acc,elem)=>{
-    return acc.concat(Array.isArray(elem)?flattenArr(elem):elem)
-  },[])
+Don’t use built-in .flat() or libraries.
 
-}
-const ans = flattenArr(inpArr)
+Return a brand-new array (don’t mutate the original).
 
-//Flatten a deeply nested array without recursion
+Bonus: After your recursive solution, try an iterative version using a stack or queue.
+*/
 
-let inpArr2 = [1,[2,3,4],[5,6,[7,8]]];
+const input = [1, [2, [3, [4]], 5], 6];
 
-function flattenArr2(arr) {
-  let res = [];
-  let stack = [...arr];
-  while(stack.length){
-    let curr = stack.pop();
-    if(Array.isArray(curr)){
-      stack.push(...curr);
+function flattenDeep(arr,depth){
+
+  if(!Array.isArray(arr)) return [arr]
+  if(depth<1) return [arr];
+
+  const a = arr.reduce((acc,elem)=>{
+    if(Array.isArray(elem)){
+     return acc.concat(flattenDeep(elem,depth-1))
     }
     else{
-      res.unshift(curr)
+     return acc.concat(elem)
     }
-  }
-  return res
-}
-const ans2 = flattenArr2(inpArr2)
-console.log(ans)
-
-//Flatten a deeply nested array with recursion and has a depth
-
-let inpArr3 = [1, [2, [3]], [4, [5]]]
-let depth = 2
-
-function flattenArr3(arr, dep) {
-  if(!Array.isArray(arr)) return [arr];
-  if(dep<1) return arr
-
-  return arr.reduce((acc,elem)=>{
-    return acc.concat(Array.isArray(elem)?flattenArr(elem,dep-1):elem)
   },[])
 
-}
-const ans3 = flattenArr3(inpArr3, depth)
+  return a
 
-console.log(ans3)
+}
+
+console.log(flattenDeep(input,3))
+
+//iterative
+
+// const input = [1,[2,[3,[4]],5],6];
+// function flattenDeep(arr){
+//   if(!Array.isArray(arr)) throw new Error('Not a Array')
+
+//   let stack = [arr];
+//   let res = [];
+//   while(stack.length){
+//     let top = stack.pop()
+//     if(Array.isArray(top)){
+//       for(let i = top.length-1; i>=0; i--){
+//         stack.push(top[i])
+//       }
+//     }
+//     else{
+//       res.push(top)
+//     }
+//   }
+//   return res
+// }
+// console.log(flattenDeep(input))
